@@ -1,7 +1,5 @@
 
 
-// // models/article.js
-
 // const mongoose = require('mongoose');
 
 // const articleSchema = new mongoose.Schema({
@@ -32,10 +30,11 @@
 //   createdDate: {
 //     type: Date,
 //     default: Date.now,
+
 //   },
 //   author: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'User',
+//     type: String,
+//     // ref: 'User',
 //     required: true,
 //   },
 //   tags: {
@@ -60,6 +59,7 @@
 // });
 
 // module.exports = mongoose.model('Article', articleSchema);
+
 
 
 const mongoose = require('mongoose');
@@ -87,16 +87,14 @@ const articleSchema = new mongoose.Schema({
   mainImage: {
     type: String,
     required: true,
-    trim: true, // URL of the main image
+    trim: true,
   },
   createdDate: {
     type: Date,
     default: Date.now,
-
   },
   author: {
     type: String,
-    // ref: 'User',
     required: true,
   },
   tags: {
