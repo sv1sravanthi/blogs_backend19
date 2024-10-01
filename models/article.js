@@ -1,5 +1,7 @@
 
 
+
+
 // const mongoose = require('mongoose');
 
 // const articleSchema = new mongoose.Schema({
@@ -14,27 +16,48 @@
 //       type: {
 //         type: String,
 //         required: true,
-//         enum: ['text', 'image', 'list', 'bullet'],
+//         enum: ['text', 'image', 'list', 'bullet'], // Handles different content types
 //       },
 //       value: {
-//         type: mongoose.Schema.Types.Mixed,
+//         type: mongoose.Schema.Types.Mixed, // Can be String for text, URL for images, etc.
 //         required: true,
 //       },
+//       description: {
+//         type: String,
+//         trim: true,
+//         default: '', // Optional description for images or other content types
+//       }
 //     },
 //   ],
-//   mainImage: {
+//   description: {
 //     type: String,
-//     required: true,
-//     trim: true, // URL of the main image
+//     // required: true,
+//     trim: true
 //   },
-//   createdDate: {
+//   sections: [
+//     {
+//       heading: {
+//         type: String,
+//         trim: true,
+//         default: ''
+//       },
+//       description: {
+//         type: String,
+//         trim: true,
+//         default: ''
+//       }
+//     }
+//   ],
+//   createdAt: {
 //     type: Date,
-//     default: Date.now,
-
+//     default: Date.now
+//   },
+//   updatedAt: {
+//     type: Date,
+//     default: Date.now
 //   },
 //   author: {
 //     type: String,
-//     // ref: 'User',
 //     required: true,
 //   },
 //   tags: {
